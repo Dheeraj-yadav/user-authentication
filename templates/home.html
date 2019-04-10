@@ -1,0 +1,47 @@
+{% load static %}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <link rel="stylesheet" type="text/css" href="{% static 'css/custom.css' %}">
+
+</head>
+<body>
+
+<form method="post">
+    {% csrf_token %}
+    Full Name:<br>
+    <input type="text" name="your full name"><br><br>
+    E-mail:<br>
+    <input type="email" name="enter your email" required><br><br>
+    Phone number:<br>
+    <input type="number" name="enter your phone number"><br><br>
+    Source city:<br>
+    <select name="city" required>
+        <option value="New Delhi">New Delhi</option>
+        <option value="Bengaluru">Bengaluru</option>
+        <option value="Mumbai">Mumbai</option>
+        <option value="Kolkata">Kolkata</option>
+    </select><br><br>
+    Gender:<br>
+    <input type="radio" name="gender" value="male">Male<br>
+    <input type="radio" name="gender" value="female">Female<br>
+    <input type="radio" name="gender" value="others">Others<br><br>
+    Service Availed:<br>
+    <input type="checkbox" name="service" value="flights" checked>Flights<br>
+    <input type="checkbox" name="service" value="car rental">Car rental<br>
+    <input type="checkbox" name="service" value="accommodations">accomodation<br>
+    <input type="checkbox" name="service" value="land package">land package<br>
+    <input type="checkbox" name="service" value="visa">visa<br><br>
+    Feedback:<br>
+    <textarea rows="4" cols="50" name="feedback"></textarea> <br><br>
+
+    <input type="submit" value="submit">
+
+</form>
+
+</body>
+</html>
